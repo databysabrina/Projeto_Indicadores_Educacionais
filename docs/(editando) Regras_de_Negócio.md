@@ -20,7 +20,7 @@ O "Status de Aproveitamento" é uma métrica qualitativa derivada do desempenho 
 * **Classificação de Status de Aproveitamento:** 
     * **Crítico:** Aproveitamento abaixo de 40%.
     * **Insuficiente:** Aproveitamento entre 40% e 59%.
-    * **Suficiente:** Aproveitamento entre 60% e 79%.
+    * **Bom:** Aproveitamento entre 60% e 79%.
     * **Excelente:** Aproveitamento igual ou superior a 80%.
 * **Nota:** A classificação do "Status de Aproveitamento" foi estabelecida a partir da taxa de acertos, correlacionada às competências pedagógicas previstas na avaliação.
 
