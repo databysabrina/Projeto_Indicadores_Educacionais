@@ -1,6 +1,7 @@
 # 📖 Dicionário de Dados
 Este documento detalha a estrutura das tabelas, tipos de dados e as definições aplicadas a cada atributo do projeto. O objetivo é fornecer uma visão técnica clara sobre a origem e o significado de cada campo utilizado no Dashboard.
 
+
 ## 📍 Sumário
 - [Convenção de Tipagem](#convenção-de-tipagem-utilizada-nesta-documentação)
 - [Tabelas Dimensão](#tabelas-originais)
@@ -14,6 +15,8 @@ Este documento detalha a estrutura das tabelas, tipos de dados e as definições
 * **`Numeric`:** Escolhido para campos de cálculo (como a Proficiência ou a Porcentagem de Acerto) por permitir casas decimais e garantir que não haja perda de precisão em operações matemáticas.
 
 ## Tabelas Originais
+---
+
 #### Tabela Dimensão: Turmas
 | Coluna | Tipo | Descrição | Observações/Domínio |
 | :--- | :--- | :--- | :--- |
@@ -22,6 +25,7 @@ Este documento detalha a estrutura das tabelas, tipos de dados e as definições
 | SÉRIE |`Varchar(50)`| Nível de Escolaridade | Domínio fixo: "1º Ano EM". |
 | TURNO |`Varchar(50)`| Período em que frequentam as aulas | Manhã (1A, 1B) e Tarde (1C, 1D). |
 
+---
 
 #### Tabela Dimensão: Alunos
 | Coluna | Tipo | Descrição | Observações/Domínio |
@@ -30,6 +34,7 @@ Este documento detalha a estrutura das tabelas, tipos de dados e as definições
 | NOME |`Varchar(50)`| Nome completo cadastrado | Campo normalizado para evitar duplicidade; cada registro representa um estudante único. |
 | IDADE |`Int4`| Idade cronológica validada | Faixa padrão entre 14 e 17 anos. Valores fora deste intervalo foram ajustados pela média da turma após validação de inconsistência. |
 
+---
 
 #### Tabela Dimensão: Proficiencia
 > [!NOTE]
@@ -42,6 +47,7 @@ Este documento detalha a estrutura das tabelas, tipos de dados e as definições
 | NÍVEL_ORDEM |`Int4`| Indexador hierárquico | Define a ordem lógica de desempenho (1 a 4). Essencial para a ordenação correta de eixos e legendas no Power BI. |
 | DESCRIÇÃO |`Varchar(50)`| Detalhamento pedagógico do nível |Explicação qualitativa sobre quais competências e habilidades o estudante demonstra em cada faixa. |
 
+---
 
 #### Tabela Fato: Avalia
 > [!NOTE]
@@ -56,6 +62,8 @@ Este documento detalha a estrutura das tabelas, tipos de dados e as definições
 | 📐 PROFICIENCIA |`Numeric`| Score de cada aluno | Pontuação numérica da Avaliação Externa baseada na Teoria de Resposta ao Item (TRI) ou critérios metodológicos desconhecidos. |
 | 🔗 ID_PROFICIENCIA |`Int4`| Chave Estrangeira | Relaciona a pontuação à sua categoria na dimensão Proficiencia (Nível 1 a 4).|
 
+---
+
 ## Novas Métricas
 #### Tabela: Analise Geral
 > [!NOTE]
@@ -68,6 +76,8 @@ Este documento detalha a estrutura das tabelas, tipos de dados e as definições
 | ACERTOS_PROFICIENCIA|`Varchar(50)`| Indicador de Matriz de Coerência. | Sinaliza inconsistências entre o volume de acertos e o nível de proficiência atribuído (Ex: "Analisar Inconsistência"). |
 | ALUNOS_EM_RISCO |`Varchar(50)`| Identificador de alerta pedagógico | Métrica Composta: Sinaliza "Em Risco" alunos com baixa proficiência, aproveitamento insuficiente ou distorção idade-série. |
 
+---
+
 #### Tabela: Analise Turmas
 > [!NOTE]
 > Esta tabela centraliza os indicadores de performance por grupo para facilitar a comparação entre as turmas. As informações de ID_TURMA, NOME_TURMA e TURNO mantêm as definições já apresentadas na tabela de dimensões correspondente.
@@ -78,5 +88,6 @@ Este documento detalha a estrutura das tabelas, tipos de dados e as definições
 | 📐 MEDIA_ACERTO |`Numeric`| Desempenho médio de acertos. | Média aritmética simples dos acertos brutos dos alunos da turma. |
 | 📐 MEDIA_PROFICIENCIA |`Numeric`| Score médio de proficiência.| Média das pontuações de proficiência; utilizada como base para o ranking pedagógico. |
 | 📐 RANKING_TURMA |`Int4`| Posição competitiva da turma. | Lógica de Ranking: Calculado via função RANK() no SQL, onde a maior média de proficiência ocupa a 1ª posição. |
+
 
 [⬅️ Voltar para o README Principal](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/main/README.md)
