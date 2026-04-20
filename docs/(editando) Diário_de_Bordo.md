@@ -58,6 +58,7 @@ O projeto resultou em um ambiente de dados auditado e transparente.
 * **Impacto:** A gestão agora possui uma ferramenta de auditoria que aponta inconsistências e alunos que precisam de atenção imediata.
 * **Ferramentas:** O ciclo foi fechado integrando SQL limpeza, processamento e cálculos, DAX criação de métricas adicionais e Power BI para a visualização dos dados.
 
+[⬅️ Voltar para o README Principal](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/main/README.md)
 
 * No GitHub, você pode colocar esse Journal no seu README.md principal sob o título "Como este projeto foi construído".
 * Isso "vende" a sua capacidade analítica antes mesmo do recrutador abrir o dashboard!
