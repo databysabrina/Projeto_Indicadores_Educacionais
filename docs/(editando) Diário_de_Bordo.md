@@ -60,6 +60,4 @@ O projeto resultou em um ambiente de dados auditado e transparente.
 
 [⬅️ Voltar para o README Principal](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/main/README.md)
 
-* No GitHub, você pode colocar esse Journal no seu README.md principal sob o título "Como este projeto foi construído".
-* Isso "vende" a sua capacidade analítica antes mesmo do recrutador abrir o dashboard!
 
