@@ -50,5 +50,4 @@ Para acessar as visualizações de todas as abas do Dashboard:
 
 Para acessar todas as interações, filtros e a navegação completa:
 > [!IMPORTANT]
-> [🔗 Clique aqui para acessar o arquivo .pbix](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/ef49460aa329c95e1d32a8345be7b93b2dfdf427/power%20bi/Dashboard%20Final.pdf)
-> [🔗 Clique aqui para acessar o link](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/ef49460aa329c95e1d32a8345be7b93b2dfdf427/power%20bi/Dashboard%20Final.pdf)
+> [🔗 Clique aqui para acessar o arquivo .pbix](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/d5515bad44772f12e65689bf95151779ef2dbf8d/power%20bi/Dashboard.pbix)
