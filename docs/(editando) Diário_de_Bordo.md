@@ -48,10 +48,11 @@ Nesta fase, o foco foi a integridade técnica. Utilizou-se SQL (PostgreSQL) para
 * **Hierarquia Visual:** Utilizou-se cores semafóricas (roxo, amarelo, azul) para distinguir rapidamente as faixas de proficiência.
 * **Comparabilidade:** Criou-se um ranking de turmas baseado na média de proficiência para gerar insights competitivos, mas para fins pedagógicos.
 > [!NOTE]
-> Veja mais detalhes da visualização nos seguintes arquivos:
-> * [Assets] (https://github.com/databysabrina/Projeto_Indicadores_Educacionais/tree/38a57f2c3608db330256314daa9e8bcb50a7830f/assets)
-> * [Power BI] https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/4e31982c305d3b805723afea0748d00ef8c54947/scripts%20SQL/05_EXPLORA%C3%87%C3%83O_ANALISE_TURMAS.sql)  
+> Veja mais detalhes da visualização nos arquivos das seguintes pastas:
+> * [Assets](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/tree/38a57f2c3608db330256314daa9e8bcb50a7830f/assets)
+> * [Power BI](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/tree/d1f49f951a1587baa6e8619946d75e00c543649c/power%20bi)
 >
+
 #### 📅 Etapa 6:Conclusão e Resultados Obtidos
 O projeto resultou em um ambiente de dados auditado e transparente.
 * **Impacto:** A gestão agora possui uma ferramenta de auditoria que aponta inconsistências e alunos que precisam de atenção imediata.
@@ -60,5 +61,4 @@ O projeto resultou em um ambiente de dados auditado e transparente.
 
 * No GitHub, você pode colocar esse Journal no seu README.md principal sob o título "Como este projeto foi construído".
 * Isso "vende" a sua capacidade analítica antes mesmo do recrutador abrir o dashboard!
-* Dica: No GitHub, você pode usar os nomes dos seus arquivos SQL como links dentro do texto.
-* Exemplo: ...identifiquei duplicatas [veja o script 01_LIMPEZA_ALUNOS.sql]. Isso incentiva o recrutador a olhar o seu código!
+
