@@ -22,7 +22,7 @@ O repositório está organizado de forma modular para refletir um fluxo de traba
 ---
 
 ## 🔗 Links Rápidos
-* [📖 Ler o Dicionário de Dados](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/0fbf8cacd97ae9d0a1208bd8bc2baaa81c9f63c2/docs/Dicion%C3%A1rio%20de%20Dados.md./docs/DICIONÁRIO_DADOS.md)
+* [📖 Ler o Dicionário de Dados](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/5f6b39ae002180b5fdd95474b9eee029905d1657/docs/Dicion%C3%A1rio%20de%20Dados.md)
 * [📓 Ver o Diário de Bordo (Passo a passo)](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/537f36bce0351409de44bdd091c90431469e1965/docs/Di%C3%A1rio%20de%20Bordo.md)
 * [📑 Entender as Regras de Negócio](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/eb660e00c92e356b46d47d933395d6f06c881bd7/docs/Regras%20de%20Neg%C3%B3cio.md)
 
