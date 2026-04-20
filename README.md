@@ -14,7 +14,7 @@ O repositório está organizado de forma modular para refletir um fluxo de traba
 * **[`/assets`](./assets):** Identidade visual, layouts desenvolvidos no Canva e vídeo demonstrativo.
 * **[`/dados`](./dados):** Amostras dos dados originais e tabelas resultantes (`Analise Geral` e `Analise Turmas`).
 * **[`/docs`](./docs):** Documentação consultiva do projeto.
-    * [Regras de Negócio](./docs/REGRAS_DE_NEGÓCIO.md): Premissas e lógicas aplicadas.
+    * [Regras de Negócio](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/0fbf8cacd97ae9d0a1208bd8bc2baaa81c9f63c2/docs/Dicion%C3%A1rio%20de%20Dados.md): Premissas e lógicas aplicadas.
     * [Dicionário de Dados](./docs/DICIONÁRIO_DADOS.md): Definição técnica de cada campo.
     * [Journal do Projeto](./docs/JOURNAL.md): O diário de bordo com as fases de desenvolvimento.
 * **[`/scripts_SQL`](./scripts_SQL):** Pipeline de dados construído em SQL (PostgreSQL).
