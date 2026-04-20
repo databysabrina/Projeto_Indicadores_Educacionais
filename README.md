@@ -57,11 +57,17 @@ O design foi planejado para ser funcional e direto:
 
 ---
 
-
-## 👤 Autor
-**Sabrina da Silva** *Conecte-se comigo!* [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/sabrina-da-silva-b4b333172)
-[![E-mail](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact.sabrinads@gmail.com)
+*Projeto desenvolvido para fins de portfólio em análise e engenharia de dados.*
 
 ---
-*Projeto desenvolvido para fins de portfólio em análise e engenharia de dados.*
+
+## 👤 Autora
+**Sabrina da Silva** 
+
+*Conecte-se comigo!* 
+
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/sabrina-da-silva-b4b333172)
+[![E-mail](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact.sabrinads@gmail.com)
+
+
 
