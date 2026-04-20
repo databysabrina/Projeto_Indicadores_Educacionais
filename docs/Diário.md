@@ -1,4 +1,4 @@
-# 📓 Diário de Bordo do Projeto
+# 📓 Diário de Bordo 
 
 Este arquivo documenta a trajetória técnica e analítica do projeto **Indicadores de Desempenho Educacional**. O documento detalha o ciclo de vida dos dados, desde o diagnóstico de integridade e saneamento via SQL, até a modelagem de indicadores estratégicos e a construção do dashboard final. O objetivo é fornecer transparência sobre as decisões metodológicas e as soluções aplicadas para transformar dados brutos em insights.
 
@@ -11,7 +11,7 @@ Antes de iniciar qualquer script, o foco foi estabelecer a "espinha dorsal" do p
   * *Qual a coerência dos dados?* (Auditoria entre o volume de acertos e a proficiência atribuída).
   * *Como as turmas se comparam?* (Criação de rankings baseados em médias auditadas).
 
-**1.2 Stack Tecnológica e Ferramentas**
+**1.2 Ferramentas**
 Organizei o fluxo de trabalho utilizando ferramentas relacionadas, para garantir evolução do processo e da aprendizagem:
   * *SQL (PostgreSQL):* Responsável por todo o motor de ETL (Extração, Transformação e Limpeza) e Engenharia de Atributos.
   * *VS Code:* Para desenvolvimento de scripts e arquivos markdown do portfólio.
@@ -19,7 +19,7 @@ Organizei o fluxo de trabalho utilizando ferramentas relacionadas, para garantir
   * *Canva:* Desenvolvimento de interface e UX (User Experience) para o dashboard.
   * *IA (ChatGPT/Gemini):* Copiloto estratégico para revisão de sintaxe SQL, auxílio na documentação técnica e brainstorming de métricas, acelerando o ciclo de aprendizado.
 
-**1.3 Organização e Documentação Inicial**
+**1.3 Organização e Documentação**
 Para garantir a transparência, estruturei os documentos que guiarão o desenvolvimento:
   * *Repositório em Módulos:* Divisão clara entre scripts SQL, arquivos de dados, ativos visuais e documentação. Realizada pelo Google Drive e pelo GitHub.
   * *Diário de Bordo:* Registro das etapas do projeto.
@@ -45,6 +45,7 @@ Nesta fase, o foco foi a integridade técnica. Utilizou-se SQL (PostgreSQL) para
 * **Normalização:** Notas originalmente em `VARCHAR` foram convertidas para `NUMERIC` via `ALTER COLUMN` com `USING::integer/numeric`, permitindo cálculos de média com precisão decimal.
 * **Tratamento de Inconsistências:** Implementei lógicas de `CASE WHEN` para filtrar idades fora da faixa escolar (14-17 anos) e corrigi erros de digitação em IDs.
 * **Deduplicação:** Criei tabelas de *Dados Limpos* utilizando `SELECT DISTINCT` para isolar registros únicos após o saneamento.
+* *Fase Técnica*: Utilizei a IA para boas práticas da documentação e para me auxiliar na integração de subquerys de maneira organizada. Refinei os prompts da IA diversas vezes para garantir que as tabelas fossem tratadas sem exclusão de dados vitais.
 > [!NOTE]
 > Veja mais detalhes da **limpeza e do tratamento** das tabelas nos seguintes scripts:
 > * Tabela Alunos: [01_LIMPEZA_ALUNOS.sql](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/e7456a8497daed56ab0be8dc4e86d3972f11fb8e/scripts%20SQL/01_LIMPEZA_ALUNOS.sql)
@@ -55,17 +56,18 @@ Nesta fase, o foco foi a integridade técnica. Utilizou-se SQL (PostgreSQL) para
 #### 📅 Etapa 4: Arquitetura e Modelagem Estrela
 * **Arquitetura:** Os dados foram organizados em um esquema de tabelas dimensões e fato (Avalia), facilitando o relacionamento e a performance.
 * **Relacionamentos:** Utilizei `LEFT JOIN` para conectar a tabela fato `AVALIA` com as dimensões `ALUNOS` e `TURMAS`, garantindo que nenhum resultado de avaliação fosse perdido mesmo em casos de inconsistência cadastral.
-* *Tabelas Analíticas:* Desenvolvi as tabelas *ANALISE_GERAL* e *ANALISE_TURMAS* via SQL para centralizar métricas complexas e reduzir o esforço de processamento do Dashboard.
+* **Tabelas Analíticas:** Desenvolvi as tabelas *ANALISE_GERAL* e *ANALISE_TURMAS* via SQL para centralizar métricas complexas e reduzir o esforço de processamento do Dashboard.
 > [!NOTE]
 > Veja mais detalhes da **modelagem e da criação de tabelas** no seguinte script: [03_NOVAS_TABELAS.sql](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/f7218b69d376d1c6925453dc4a2e53fbd4f601b9/scripts%20SQL/03_NOVAS_TABELAS.sql)
 
 ---
 #### 📅 Etapa 5: Desenvolvimento de Métricas de Inteligência
+Após a criação de novas tabelas, foram definidas e aplicadas métricas para transformar os dados brutos em possíveis insights educacionais.
 * **Matriz de Coerência:** Foi criada uma métrica `ACERTOS_PROFICIENCIA` usando lógicas condicionais para flagar alunos com alto acerto e baixa proficiência (e vice-versa), garantindo a confiabilidade da avaliação.
 * **Status de Aproveitamento:** Implementou-se uma classificação qualitativa (Crítico a Excelente) baseada no percentual de acertos.
 * **Identificador de Risco:** Utilizei a função `TRIM` e concatenação de strings para criar um status detalhado de risco, unindo critérios de idade, aproveitamento e proficiência.
 * **Ranking de Performance:** Apliquei a Window Function `RANK() OVER (ORDER BY MEDIA_ACERTO DESC)` para gerar um ranking dinâmico entre as turmas.
-  * *Fase de Correção:* A IA auxiliou na correção de erros de sintaxe na função RANK(), permitindo que eu focasse na lógica do ranking de turmas e não apenas na gramática do SQL.
+* *Fase de Correção:* A IA auxiliou na correção de erros de sintaxe para o estabelecimento de métricas. Ao mesmo tempo foi uma ferramenta de aprendizado de funções ainda desconhecidas, como `TRIM`e `RANK ()`. Os scripts com dicas da IA foram revisados e modificados para se enxaixar nas Regras de Negócio, utilizando diferentes prompts para compreender o uso de cada função antes de aplicá-la.
 > [!NOTE]
 > Veja mais detalhes do **desenvolvimento de métricas** nos seguintes scripts:
 > * Tabela Analise Geral: [04_EXPLORAÇÃO_ANALISE_GERAL.sql](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/27fb5a59fee354a597d77b5ae86f56b593ff8b01/scripts%20SQL/04_EXPLORA%C3%87%C3%83O_ANALISE_GERAL.sql)
@@ -74,8 +76,10 @@ Nesta fase, o foco foi a integridade técnica. Utilizou-se SQL (PostgreSQL) para
 
 ---
 #### 📅 Etapa 6: Visualização de Dados e UX (Power BI & Canva)
-* **Hierarquia Visual:** Utilizou-se cores semafóricas (roxo, amarelo, azul) para distinguir rapidamente as faixas de proficiência.
-* **Comparabilidade:** Criou-se um ranking de turmas baseado na média de proficiência para gerar insights competitivos, mas para fins pedagógicos.
+Nessa etapa, com as métricas estabelecidas, refleti sobre os objetivos e como poderia apresentá-los visualmente, pensando em tabelas e gráficos mais indicados para as variáveis. Utilizando o Power BI e o Canva, explorei diferentes visualizações e layouts, definindo abas como GERAL (reunindo as informações das tabelas originais), ADMIN (com dados focados nas turmas e uma visão ampla para a gestão escolar), ALERTAS (com as métricas de risco criadas envolvendo acertos e a proficiência da avaliação) e RESULTADOS (Focado nos indicadores da Avaliação Externa, sem utilizar os critérios próprios).
+* **Hierarquia Visual:** Utilizou-se cores semafóricas para distinguir rapidamente as faixas de proficiência ou status de aproveitamento.
+* **Comparabilidade:** Criou-se divisões por turmas para gerar insights competitivos, mas pedagógicos. 
+* *Fase de Visual:* Utilizei a IA para o aprendizado de algumas ferramentas DAX e de visualização do Power BI. Também forneceu dicas de organização do layout, para torná-lo mais acessível. 
 > [!NOTE]
 > Veja mais detalhes da visualização nos arquivos das seguintes pastas:
 > * [Assets](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/tree/38a57f2c3608db330256314daa9e8bcb50a7830f/assets)
@@ -84,11 +88,11 @@ Nesta fase, o foco foi a integridade técnica. Utilizou-se SQL (PostgreSQL) para
 
 ---
 #### 📅 Etapa 7:Conclusão e Resultados Obtidos
-O projeto resultou em um ambiente de dados auditado e transparente.
-* **Impacto:** A gestão agora possui uma ferramenta de auditoria que aponta inconsistências e alunos que precisam de atenção imediata.
-* **Ferramentas:** O ciclo foi fechado integrando SQL limpeza, processamento e cálculos, DAX criação de métricas adicionais e Power BI para a visualização dos dados.
+O projeto resultou em um ambiente de dados auditado e transparente. 
+* **Análises:** O dashboard possibilita ter uma visão analítica macro (comparações por turmas ou pelo total de matrículas) e uma visão micro (proficiência e status de aproveitamento de cada estudante). 
+* **Impacto:** A gestão agora possui uma ferramenta que aponta inconsistências e alunos/turmas que precisam de atenção imediata.
+* **Resultados** Retomando os objetivos iniciais do projeto, conseguimos responder às perguntas feitas a partir das visualizações criadas.
+
 
 
 [⬅️ Voltar para o README Principal](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/main/README.md)
-
-
