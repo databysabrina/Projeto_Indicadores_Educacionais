@@ -19,7 +19,7 @@ Nesta fase, o foco foi a integridade técnica. Utilizou-se SQL (PostgreSQL) para
 * **Tratamento de Inconsistências:** Implementei lógicas de 'CASE WHEN' para filtrar idades fora da faixa escolar (14-17 anos) e corrigi erros de digitação em IDs.
 * **Deduplicação:** Criei tabelas de "Dados Limpos" utilizando 'SELECT DISTINCT' para isolar registros únicos após o saneamento.
 > [!NOTE]
-> Veja mais detalhes da **limpeza e do tratamento** dos dados nos seguintes scripts:
+> Veja mais detalhes da **limpeza e do tratamento** das tabelas nos seguintes scripts:
 > * Tabela Alunos: [01_LIMPEZA_ALUNOS.sql](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/e7456a8497daed56ab0be8dc4e86d3972f11fb8e/scripts%20SQL/01_LIMPEZA_ALUNOS.sql)
 > * Tabela Avalia: [02_LIMPEZA_AVALIA.sql](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/9e53e8f507940aedce6f25a110ce1040c1d9196d/scripts%20SQL/02_LIMPEZA_AVALIA.sql)  
 >
@@ -30,8 +30,7 @@ Nesta fase, o foco foi a integridade técnica. Utilizou-se SQL (PostgreSQL) para
 * **Relacionamentos:** Utilizei 'LEFT JOIN' para conectar a tabela fato 'AVALIA' com as dimensões 'ALUNOS' e 'TURMAS', garantindo que nenhum resultado de avaliação fosse perdido mesmo em casos de inconsistência cadastral.
 * *Tabelas Analíticas:* Desenvolvi as tabelas 'ANALISE_GERAL' e 'ANALISE_TURMAS' via SQL para centralizar métricas complexas e reduzir o esforço de processamento do Dashboard.
 > [!NOTE]
-> Veja mais detalhes da **modelagem e da criação de tabelas** no seguinte script:
-> * Tabela Alunos: [01_LIMPEZA_ALUNOS.sql](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/e7456a8497daed56ab0be8dc4e86d3972f11fb8e/scripts%20SQL/01_LIMPEZA_ALUNOS.sql)
+> Veja mais detalhes da **modelagem e da criação de tabelas** no seguinte script: [03_NOVAS_TABELAS.sql](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/f7218b69d376d1c6925453dc4a2e53fbd4f601b9/scripts%20SQL/03_NOVAS_TABELAS.sql)
 
 
 #### 📅 Etapa 4: Desenvolvimento de Métricas de Inteligência
@@ -39,6 +38,11 @@ Nesta fase, o foco foi a integridade técnica. Utilizou-se SQL (PostgreSQL) para
 * **Status de Aproveitamento:** Implementou-se uma classificação qualitativa (Crítico a Excelente) baseada no percentual de acertos.
 * **Identificador de Risco:** Utilizei a função 'TRIM' e concatenação de strings para criar um status detalhado de risco, unindo critérios de idade, aproveitamento e proficiência.
 * **Ranking de Performance:** Apliquei a Window Function 'RANK() OVER (ORDER BY MEDIA_ACERTO DESC)' para gerar um ranking dinâmico entre as turmas.
+> [!NOTE]
+> Veja mais detalhes do **desenvolvimento de métricas** nos seguintes scripts:
+> * Tabela Analise Geral: [04_EXPLORAÇÃO_ANALISE_GERAL.sql](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/e7456a8497daed56ab0be8dc4e86d3972f11fb8e/scripts%20SQL/01_LIMPEZA_ALUNOS.sql)
+> * Tabela Analise Turmas: [05_EXPLORAÇÃO_ANALISE_TURMAS.sql](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/9e53e8f507940aedce6f25a110ce1040c1d9196d/scripts%20SQL/02_LIMPEZA_AVALIA.sql)  
+>
 
 #### 📅 Etapa 5: Visualização de Dados e UX (Power BI & Canva)
 * **Hierarquia Visual:** Utilizou-se cores semafóricas (roxo, amarelo, azul) para distinguir rapidamente as faixas de proficiência.
