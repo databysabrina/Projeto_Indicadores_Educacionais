@@ -1,4 +1,4 @@
-# 📊 Dashboard de Performance Educacional: Análise de Proficiência
+# 📊 Dashboard de Performance Educacional: Análise de Indicadores
 <img width="1643" height="942" alt="image" src="https://github.com/user-attachments/assets/10171de3-f48b-495c-9c9c-4a66e4f55460" />
 
 ---
