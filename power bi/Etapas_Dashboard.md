@@ -44,7 +44,11 @@ Buscando um nível de entrega profissional, integrei o Power BI com ferramentas 
 ---
 
 ### 📊 Confira o Resultado em Tempo Real
-Para visualizar todas as interações, filtros e a navegação completa:
-
+Para acessar as visualizações de todas as abas do Dashboard:
 > [!IMPORTANT]
-> [🔗 Clique aqui para acessar o Dashboard Final (PDF/Link)](LINK_DO_SEU_ARQUIVO_OU_PDF)
+> [🔗 Clique aqui para acessar em PDF](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/ef49460aa329c95e1d32a8345be7b93b2dfdf427/power%20bi/Dashboard%20Final.pdf)
+
+Para acessar todas as interações, filtros e a navegação completa:
+> [!IMPORTANT]
+> [🔗 Clique aqui para acessar o arquivo .pbix](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/ef49460aa329c95e1d32a8345be7b93b2dfdf427/power%20bi/Dashboard%20Final.pdf)
+> [🔗 Clique aqui para acessar o link](https://github.com/databysabrina/Projeto_Indicadores_Educacionais/blob/ef49460aa329c95e1d32a8345be7b93b2dfdf427/power%20bi/Dashboard%20Final.pdf)
